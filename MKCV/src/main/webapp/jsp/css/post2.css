@@ -1,0 +1,237 @@
+/* 基本样式 */
+body {
+    font-family: Georgia, serif;
+    margin: 0;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: white;
+    overflow-x: hidden;
+}
+
+/* 头部样式 */
+.header {
+    text-align: center;
+    padding: 50px 0px;      /*padding保证上下有50px内部间距,否则上下午无内部间距*/
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+    box-shadow: 0px 10px 20px #2c3e50;
+}
+.header h1 {
+    font-size: 3.5rem;
+    margin: 0;
+    animation: slidein 3s, ease-out;
+}
+/* h1的animation */
+@keyframes slidein {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    /* 从"不透明"转为"透明",位置上从y轴-30下降到0 */
+}
+
+/* 导航栏样式 */
+.nav {
+    color: white; /* 文字颜色为白色 */
+    padding: 15px; /* 增大内边距以增加导航栏高度 */
+    display: flex; /* 使用弹性布局 */
+    justify-content: center; /* 居中对齐导航链接 */
+    align-items: center; /* 垂直居中 */
+    position: relative; /* 相对定位以便进行绝对定位 */
+    font-size: 1.2rem; /* 增大文字大小 */
+    position: sticky;
+    z-index: 1000;
+    margin: 20px;
+}
+/* 导航链接容器样式 */
+.nav .nav-links {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+/* 导航链接样式 */
+.nav .nav-links a {
+    color: white;   /*字体颜色*/
+    text-decoration: none;
+    padding: 10px 20px; /*上下10,左右20*/
+    margin: 0 20px; /*上下0,左右20*/
+    font-size: 1.3rem;
+    border-radius: 45px;
+    transition: background-color 1s ease-out, font-size 1s ease-out;
+}
+.nav .nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    font-size: 1.5rem;
+}
+
+/* 登录和注册链接容器样式 */
+.nav .auth-links {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+/* 登录和注册链接样式 */
+.nav .auth-links a {
+    color: white;
+    margin: 0 5px;
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+.nav .auth-links a:hover {
+    background-color: #007e8f;
+    color: #fff;
+}
+
+li {
+    list-style-type: none;
+}
+
+/* 布局容器样式 */
+.container {
+    display: flex;
+    overflow: hidden;
+}
+
+/* 侧边栏样式 */
+.sidebar {
+    width: 200px;
+    background-color: #fad55b;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.sidebar h2{
+    text-decoration: none; /* 去掉链接下划线 */
+    font-size: 25px;  /* 字体大小 */
+    line-height: auto;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: bolder;
+}
+.sidebar a{
+    text-decoration: none; /* 去掉链接下划线 */
+    font-size: 25px;  /* 字体大小 */
+    color: #000;/*文字颜色为白色 */
+    line-height: 150px;
+    font-weight: 900;
+}
+.sidebar a:hover {
+    color: #00c6ff;
+}
+
+/* 主内容区域样式 */
+.main-content {
+    flex: 1; /* 使主内容区域占据剩余空间 */
+    padding: 15px;
+    background-color: white; /* 设置背景颜色为白色 */
+    border-radius: 10px;
+}
+
+ /* 帖子样式 */
+ .post {
+    background-color: #f9f9f9; /* 设置帖子背景颜色 */
+    color: #333;
+    margin: 0; /* 移除外边距 */
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+}
+
+/* 帖子标签样式 */
+.post-label {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #000;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+/* 帖子标题样式 */
+.post-title {
+    font-size: 30px;
+    margin: 0;
+    color: black;
+    text-align: center;
+}
+
+/* 帖子元数据样式 */
+.post-meta {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* 帖子内容样式 */
+.post-content {
+    font-size: 20px;
+    color: #333;
+}
+
+.post h4{
+    margin-bottom: 10px;
+    color: #0072ff;
+}
+
+/* 页脚 */
+footer {    /*页脚区*/
+    text-align: center;
+    padding: 30px 45px;    /*页脚内部,内边距上下30px,左右100px*/
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    /* font-size: 0.8rem; */
+}
+.footer-container{      /*包含了若干footer-section*/
+    display: flex;
+    justify-content: space-between;     /* 均匀排列每个元素 首个元素放置于起点，末尾元素放置于终点 */
+    /* 均匀分布在容器内 */
+    flex-wrap: wrap;    /*flex元素此时被打断到多个行中。空间不足自动换行。*/
+}
+.footer-section{
+    margin-bottom: 20px;
+    max-width: 250px;
+    /* max-width CSS 属性设置元素的最大宽度。它可防止 width 属性的应用值大于 max-width 指定的值。 */
+    margin-right: 75px;     /*使所有的footer-section的div向右外边距持有一定距离*/
+}
+.footer-section h4{     /* 页脚小标题属性 */
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: #ddd;
+    font-weight:800;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.footer-section p, .footer-section a {  /*应用于页脚的.footer-section中的所有p标签和所有a标签*/
+    color: #ddd;
+    font-size: 0.9rem;
+    margin: 15px 0px;
+    text-decoration: none;
+}
+.footer-section a:hover{
+    text-decoration: underline;
+    color: #00c6ff;
+}
+.footer-section a img{      /*"社交媒体"icon*/
+    width: 30px;
+    height: 30px;
+    margin: 20px;
+}
+footer p{   /*最后一小段话*/
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 0.8rem;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+footer .p2{
+    margin-top: 0;
+}

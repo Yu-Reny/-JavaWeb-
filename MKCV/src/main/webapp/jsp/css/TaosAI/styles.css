@@ -1,0 +1,142 @@
+@keyframes gradientTransition {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 100%;
+    }
+}
+/* 全局 */
+html,body {
+    height: 100%;
+    /* font-family: Arial, sans-serif; */
+    /* background-color: #f2f2f2; */
+    /* background: linear-gradient(135deg,#00c6ff,#0072ff); */
+    /* background: linear-gradient(135deg, #00c6ff, #0072ff); */
+
+    background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%),
+    linear-gradient(90deg, #37ecba 0%, #72afd3 100%);   /*度。一个完整的圆是 360deg。例：0deg，90deg，14.23deg*/
+    background-size: 300% 300%; /* 增强移动效果 */
+    background-blend-mode: soft-light; /* 叠加颜色，增强过渡效果 */
+    
+    /* 动画 */
+    animation: gradientTransition 14s ease-in-out infinite;
+}
+
+
+
+/* 导航栏 */
+nav{
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    position: sticky;
+    /* 元素根据正常文档流进行定位,然后相对它的最近滚动祖先和containing block,包括 table-related 元素，基于 top、right、bottom 和 left 的值进行偏移。 */
+    z-index: 1000;
+    /* z-index 在 CSS 中是用来设置元素的堆叠顺序的,它决定了元素在页面上的前后顺序。z-index 的值越大，元素就越靠前显示。 */
+    /* z-index:1000保证了它永远高于其他元素 */
+}
+nav a{
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px; /*上下10,左右20*/
+    margin: 0 20px; /*上下0,左右20*/
+    font-size: 1.3rem;
+    border-radius: 45px;
+    transition: background-color 1s ease-out, font-size 1s ease-out;
+    /* transition 属性用来指定在属性变化时的过渡效果，包括过渡的持续时间、过渡的方式和延迟等 */
+}
+nav a:hover{    /*配合transition,鼠标放上去后,transition开始过渡,过渡至它指定的效果*/
+    background-color: rgba(255, 255, 255, 0.2);
+    font-size: 1.5rem;
+}
+
+
+
+
+
+
+
+/* AI部分 */
+.container {
+    width: 80%;
+	height: 95%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #ffffff;
+	position: relative;
+    
+}
+
+.container h1{
+    /* font-family: 'Times New Roman', Times, serif; */
+    color: white;
+    padding: 5px 10px;
+    font-weight: bolder;
+    background: linear-gradient(135deg,#00c6ff,#0072ff);
+}
+
+#output-text {
+	height: 80%;
+    margin-top: 25px;
+    text-align: left;
+	overflow-y:auto;
+}
+
+dt {
+	font-weight: bold;
+	padding: 10px;
+}
+
+/* 输入框 */
+textarea {
+    width: 95%;
+    height: 40px;
+    resize: none;
+	padding: 5px;
+	margin-bottom: 50px;
+	left: 10px;
+	bottom: 0px;
+	position: absolute;
+	border-radius: 10px;
+	border-color: #87B2F6;
+	border-width: 3px;
+    transition: box-shadow 2s ease;     /*transition过渡到↓box-shadow*/
+}
+textarea:focus{     /*focus:聚焦, 点中输入框出现效果*/
+    box-shadow: 0px 20px 15px darkgrey;
+}
+textarea::placeholder{      /*输入框里placeholder提示文字的属性*/
+    font-size: 1rem;
+    font-weight: bolder;
+}
+
+
+/* "发送"按钮样式 */
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+	bottom: 0px;
+	position: absolute;
+    margin-top: -5px;
+    transition: box-shadow 1s ease-out, padding 1s ease-out;
+}
+button:hover{
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3);
+    padding: 12px 22px;
+}
+
+
+img {
+  border-radius: 50%;
+}
+
+
+
